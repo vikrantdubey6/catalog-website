@@ -10,7 +10,7 @@ export default function Home() {
     <div className="space-y-12">
       <section className="text-center bg-card p-8 rounded-xl shadow-lg">
         <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary tracking-tighter">
-          Welcome to ToyVerse!
+          Welcome to DM OVERSEAS!
         </h1>
         <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
           Explore a universe of fun and learning. We've curated the best toys to spark imagination and create endless smiles.

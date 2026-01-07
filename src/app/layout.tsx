@@ -7,8 +7,8 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 
 export const metadata: Metadata = {
-  title: 'ToyVerse - Your World of Fun!',
-  description: 'Discover a universe of toys for all ages. From educational toys to action figures, find the perfect playmate at ToyVerse.',
+  title: 'DM OVERSEAS - Your World of Fun!',
+  description: 'Discover a universe of toys for all ages. From educational toys to action figures, find the perfect playmate at DM OVERSEAS.',
 };
 
 export default function RootLayout({
