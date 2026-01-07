@@ -3,10 +3,9 @@
 import { useCart } from '@/contexts/CartContext';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Trash2, ShoppingBag } from 'lucide-react';
+import { Trash2, ShoppingBag, Plus, Minus } from 'lucide-react';
 import Link from 'next/link';
 import CheckoutForm from '@/components/checkout/CheckoutForm';
 
@@ -49,14 +48,13 @@ export default function CartPage() {
                   <p className="text-muted-foreground">${item.price.toFixed(2)}</p>
                 </div>
                 <div className="flex items-center gap-2 mx-4">
-                  <Input
-                    type="number"
-                    min="1"
-                    value={item.quantity}
-                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value, 10))}
-                    className="w-16 h-10 text-center"
-                    aria-label={`Quantity for ${item.name}`}
-                  />
+                  <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>
+                    <Minus className="h-4 w-4" />
+                  </Button>
+                  <span className="w-10 text-center font-medium">{item.quantity}</span>
+                  <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(item.id, item.quantity + 1)}>
+                    <Plus className="h-4 w-4" />
+                  </Button>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => removeFromCart(item.id)} aria-label={`Remove ${item.name} from cart`}>
                   <Trash2 className="h-5 w-5 text-destructive" />
@@ -68,7 +66,7 @@ export default function CartPage() {
           <div className="lg:col-span-1">
             <Card className="sticky top-24">
               <CardHeader>
-                <CardTitle>Order Summary</CardTitle>
+                <CardTitle className="font-headline text-2xl">Order Summary</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between">
