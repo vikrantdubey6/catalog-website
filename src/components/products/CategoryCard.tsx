@@ -3,12 +3,14 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Category } from '@/lib/types';
 import { ArrowRight } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 interface CategoryCardProps {
   category: Category;
+  productCount: number;
 }
 
-const CategoryCard = ({ category }: CategoryCardProps) => {
+const CategoryCard = ({ category, productCount }: CategoryCardProps) => {
   return (
     <Link href={`/products/${category.slug}`} className="group block">
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
@@ -31,6 +33,9 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
             <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
           </CardTitle>
         </CardHeader>
+        <CardContent>
+          <Badge variant="secondary">{productCount} Products</Badge>
+        </CardContent>
       </Card>
     </Link>
   );

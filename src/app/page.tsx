@@ -1,7 +1,11 @@
-import { categories } from '@/lib/data';
+import { categories, products } from '@/lib/data';
 import CategoryCard from '@/components/products/CategoryCard';
 
 export default function Home() {
+  const getProductCountForCategory = (categorySlug: string) => {
+    return products.filter((p) => p.category === categorySlug).length;
+  };
+
   return (
     <div className="space-y-12">
       <section className="text-center bg-card p-8 rounded-xl shadow-lg">
@@ -19,7 +23,11 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => (
-            <CategoryCard key={category.id} category={category} />
+            <CategoryCard
+              key={category.id}
+              category={category}
+              productCount={getProductCountForCategory(category.slug)}
+            />
           ))}
         </div>
       </section>
