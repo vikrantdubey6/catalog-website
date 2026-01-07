@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { CartItem, Product } from '@/lib/types';
 import { useToast } from "@/hooks/use-toast";
+import PhoneCaptureModal from '@/components/cart/PhoneCaptureModal';
 
 interface CartContextType {
   cartItems: CartItem[];
@@ -18,9 +19,12 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isPhoneModalOpen, setPhoneModalOpen] = useState(false);
+  const [pendingProduct, setPendingProduct] = useState<Product | null>(null);
+  const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
   const { toast } = useToast();
 
-  const addToCart = (product: Product) => {
+  const handleAddToCart = (product: Product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
@@ -34,6 +38,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       title: "Added to Cart!",
       description: `${product.name} is now in your cart.`,
     });
+  };
+  
+  const addToCart = (product: Product) => {
+    if (!phoneNumber) {
+      setPendingProduct(product);
+      setPhoneModalOpen(true);
+    } else {
+      handleAddToCart(product);
+    }
+  };
+
+  const handlePhoneSubmit = (phone: string) => {
+    setPhoneNumber(phone);
+    if (pendingProduct) {
+      handleAddToCart(pendingProduct);
+    }
+    setPhoneModalOpen(false);
+    setPendingProduct(null);
   };
 
   const removeFromCart = (productId: string) => {
@@ -81,6 +103,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
+      <PhoneCaptureModal
+        isOpen={isPhoneModalOpen}
+        onClose={() => setPhoneModalOpen(false)}
+        onSubmit={handlePhoneSubmit}
+      />
     </CartContext.Provider>
   );
 };
