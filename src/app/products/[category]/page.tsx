@@ -4,7 +4,6 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import Link from 'next/link';
 import RecommendedCategories from '@/components/products/RecommendedCategories';
 import ProductCard from '@/components/products/ProductCard';
-import { Category } from '@/lib/types';
 
 interface CategoryPageProps {
   params: {
@@ -27,7 +26,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const otherCategories = categories
     .filter((c) => c.id !== category.id)
-    .map((c) => ({
+    .map(({ Icon, ...c }) => ({ // Destructure and omit the Icon property
       ...c,
       productCount: getProductCountForCategory(c.slug)
     }));
