@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/hooks/use-toast';
 import { Rocket } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -19,6 +20,7 @@ const formSchema = z.object({
 const CheckoutForm = () => {
   const { clearCart } = useCart();
   const { toast } = useToast();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -31,12 +33,13 @@ const CheckoutForm = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log('Order Details:', values);
-    toast({
-      title: 'Order Placed!',
-      description: 'Your toys are on their way. Thank you for shopping with ToyVerse!',
-    });
+    
+    // In a real app, you would process the payment here.
+    
     form.reset();
     clearCart();
+    
+    router.push('/order-confirmation');
   }
 
   return (
