@@ -1,3 +1,5 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import { categories, products } from '@/lib/data';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
@@ -10,12 +12,6 @@ interface CategoryPageProps {
   params: {
     category: string;
   };
-}
-
-export async function generateStaticParams() {
-  return categories.map((category) => ({
-    category: category.slug,
-  }));
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
@@ -33,7 +29,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const otherCategories = categories
     .filter((c) => c.id !== category.id)
-    .map(({ Icon, ...rest }) => rest);
+    .map((c) => ({
+      ...c,
+      productCount: getProductCountForCategory(c.slug)
+    }));
 
   return (
     <div className="space-y-8">
@@ -69,7 +68,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </div>
       )}
 
-      <RecommendedCategories categories={otherCategories} getProductCountForCategory={getProductCountForCategory} />
+      <RecommendedCategories categories={otherCategories} />
     </div>
   );
 }

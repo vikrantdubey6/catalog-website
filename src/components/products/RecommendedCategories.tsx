@@ -6,11 +6,10 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Link from 'next/link';
 
 interface RecommendedCategoriesProps {
-  categories: Category[];
-  getProductCountForCategory: (slug: string) => number;
+  categories: (Omit<Category, 'Icon'> & { productCount: number })[];
 }
 
-export default function RecommendedCategories({ categories, getProductCountForCategory }: RecommendedCategoriesProps) {
+export default function RecommendedCategories({ categories }: RecommendedCategoriesProps) {
   return (
     <section className="py-12 border-t mt-12">
       <div className="flex justify-between items-center mb-8">
@@ -31,7 +30,7 @@ export default function RecommendedCategories({ categories, getProductCountForCa
           {categories.map((category) => (
             <CarouselItem key={category.id} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
               <div className="p-1 h-full">
-                <CategoryCard category={category} productCount={getProductCountForCategory(category.slug)} />
+                <CategoryCard category={category} productCount={category.productCount} />
               </div>
             </CarouselItem>
           ))}
