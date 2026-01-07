@@ -13,6 +13,8 @@ interface CartContextType {
   clearCart: () => void;
   cartTotal: number;
   cartCount: number;
+  openPhoneModal: () => void;
+  hasPhoneNumber: () => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -48,6 +50,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       handleAddToCart(product);
     }
   };
+
+  const openPhoneModal = () => {
+    // We clear pending product in case the user clicked the user icon
+    // instead of the add to cart button.
+    setPendingProduct(null);
+    setPhoneModalOpen(true);
+  }
+
+  const hasPhoneNumber = () => {
+    return phoneNumber !== null;
+  }
 
   const handlePhoneSubmit = (phone: string) => {
     setPhoneNumber(phone);
@@ -100,6 +113,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         clearCart,
         cartTotal,
         cartCount,
+        openPhoneModal,
+        hasPhoneNumber,
       }}
     >
       {children}
