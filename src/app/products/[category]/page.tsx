@@ -4,6 +4,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import Link from 'next/link';
 import RecommendedCategories from '@/components/products/RecommendedCategories';
 import ProductCard from '@/components/products/ProductCard';
+import { Category } from '@/lib/types';
 
 interface CategoryPageProps {
   params: {
@@ -30,7 +31,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     return products.filter((p) => p.category === categorySlug).length;
   };
 
-  const otherCategories = categories.filter((c) => c.id !== category.id);
+  const otherCategories = categories
+    .filter((c) => c.id !== category.id)
+    .map(({ Icon, ...rest }) => rest);
 
   return (
     <div className="space-y-8">

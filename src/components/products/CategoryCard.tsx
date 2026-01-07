@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface CategoryCardProps {
-  category: Category;
+  category: Omit<Category, 'Icon'>;
   productCount: number;
 }
 
@@ -27,7 +27,6 @@ const CategoryCard = ({ category, productCount }: CategoryCardProps) => {
         <CardHeader className="flex-grow">
           <CardTitle className="flex items-center justify-between">
             <span className="flex items-center gap-2 font-headline text-2xl">
-              <category.Icon className="h-6 w-6 text-primary" />
               {category.name}
             </span>
             <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
