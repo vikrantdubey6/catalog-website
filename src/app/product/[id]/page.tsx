@@ -76,7 +76,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="space-y-6">
           <h1 className="font-headline text-4xl font-bold">{product.name}</h1>
           <p className="text-xl text-muted-foreground">{product.description}</p>
-          <p className="text-4xl font-bold text-primary">${product.price.toFixed(2)}</p>
+          <p className="text-4xl font-bold text-primary">Rs. {product.price.toFixed(2)}</p>
           
           <Card>
             <CardContent className="p-6">

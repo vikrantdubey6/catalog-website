@@ -27,7 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <CardDescription>{product.description}</CardDescription>
         </CardHeader>
         <CardContent>
-           <p className="text-2xl font-bold text-primary">${product.price.toFixed(2)}</p>
+           <p className="text-2xl font-bold text-primary">Rs. {product.price.toFixed(2)}</p>
         </CardContent>
         <CardFooter>
           <AddToCartButton product={product} />
