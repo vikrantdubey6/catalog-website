@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { categories, products } from '@/lib/data';
-import ProductCard from '@/components/products/ProductCard';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
-import RecommendedProducts from '@/components/products/RecommendedProducts';
+import RecommendedCategories from '@/components/products/RecommendedCategories';
+import ProductCard from '@/components/products/ProductCard';
 
 interface CategoryPageProps {
   params: {
@@ -26,10 +26,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const categoryProducts = products.filter((p) => p.category === category.slug);
 
-  const recommendedProducts = products
-    .filter((p) => p.category !== category.slug)
-    .sort(() => 0.5 - Math.random()) // Shuffle
-    .slice(0, 10);
+  const getProductCountForCategory = (categorySlug: string) => {
+    return products.filter((p) => p.category === categorySlug).length;
+  };
+
+  const otherCategories = categories.filter((c) => c.id !== category.id);
 
   return (
     <div className="space-y-8">
@@ -65,7 +66,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </div>
       )}
 
-      <RecommendedProducts products={recommendedProducts} />
+      <RecommendedCategories categories={otherCategories} getProductCountForCategory={getProductCountForCategory} />
     </div>
   );
 }
