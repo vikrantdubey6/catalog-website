@@ -1,3 +1,118 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "category-action-figures",
+      "description": "A collection of action figures ready for an adventure.",
+      "imageUrl": "https://images.unsplash.com/photo-1623039902375-29258147f39e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhY3Rpb24lMjBmaWd1cmVzfGVufDB8fHx8MTc2Nzc4MDQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "action figures"
+    },
+    {
+      "id": "category-building-blocks",
+      "description": "Colorful building blocks stacked together.",
+      "imageUrl": "https://images.unsplash.com/photo-1539477192933-1a7dde04aa77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidWlsZGluZyUyMGJsb2Nrc3xlbnwwfHx8fDE3Njc3NjgyMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "building blocks"
+    },
+    {
+      "id": "category-puzzles",
+      "description": "An intricate puzzle partially completed.",
+      "imageUrl": "https://images.unsplash.com/photo-1588591795084-1770cb3be374?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqaWdzYXclMjBwdXp6bGV8ZW58MHx8fHwxNzY3Njc1NTc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jigsaw puzzle"
+    },
+    {
+      "id": "category-plush-toys",
+      "description": "A cuddly teddy bear sitting on a shelf.",
+      "imageUrl": "https://images.unsplash.com/photo-1648311203209-da34f7d0d800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWRkeSUyMGJlYXJ8ZW58MHx8fHwxNzY3NzcwMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teddy bear"
+    },
+    {
+      "id": "category-vehicles",
+      "description": "A red toy car on a wooden floor.",
+      "imageUrl": "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0b3klMjBjYXJ8ZW58MHx8fHwxNzY3NjkwOTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "toy car"
+    },
+    {
+      "id": "category-educational",
+      "description": "Educational toys like an abacus and alphabet blocks.",
+      "imageUrl": "https://images.unsplash.com/photo-1696527018053-6248a8a863f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlZHVjYXRpb25hbCUyMHRveXN8ZW58MHx8fHwxNzY3NzgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "educational toys"
+    },
+    {
+      "id": "product-space-ranger",
+      "description": "A space ranger action figure with a laser gun.",
+      "imageUrl": "https://images.unsplash.com/photo-1591449235870-2d8491bf51ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhc3Ryb25hdXQlMjB0b3l8ZW58MHx8fHwxNzY3NzgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "astronaut toy"
+    },
+    {
+      "id": "product-jungle-explorer",
+      "description": "A jungle explorer action figure with binoculars.",
+      "imageUrl": "https://images.unsplash.com/photo-1748583592522-87ffc0f41d73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxleHBsb3JlciUyMHRveXxlbnwwfHx8fDE3Njc3ODA0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "explorer toy"
+    },
+    {
+      "id": "product-ninja-warrior",
+      "description": "A stealthy ninja action figure with a sword.",
+      "imageUrl": "https://images.unsplash.com/photo-1586720716768-94bc6494c2a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxuaW5qYSUyMHRveXxlbnwwfHx8fDE3Njc3ODA0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ninja toy"
+    },
+    {
+      "id": "product-classic-castle-set",
+      "description": "A set of building blocks to create a classic castle.",
+      "imageUrl": "https://images.unsplash.com/photo-1661968494593-62799fe10115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibG9jayUyMGNhc3RsZXxlbnwwfHx8fDE3Njc3ODA0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "block castle"
+    },
+    {
+      "id": "product-city-creator-box",
+      "description": "A large box of various building blocks for creating a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1561467586-c2b59497d468?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0b3klMjBibG9ja3N8ZW58MHx8fHwxNzY3NzgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "toy blocks"
+    },
+    {
+      "id": "product-animal-kingdom-puzzle",
+      "description": "A 1000-piece puzzle of various animals.",
+      "imageUrl": "https://images.unsplash.com/photo-1761575280417-00b53a4ce8a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltYWwlMjBwdXp6bGV8ZW58MHx8fHwxNzY3NzgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "animal puzzle"
+    },
+    {
+      "id": "product-world-map-puzzle",
+      "description": "A floor puzzle of the world map for kids.",
+      "imageUrl": "https://images.unsplash.com/photo-1764301718297-b455f662aa75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXAlMjBwdXp6bGV8ZW58MHx8fHwxNzY3NzgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map puzzle"
+    },
+    {
+      "id": "product-cuddly-bear",
+      "description": "A classic brown teddy bear.",
+      "imageUrl": "https://images.unsplash.com/photo-1652501595862-1d06fe543544?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWRkeSUyMGJlYXJ8ZW58MHx8fHwxNzY3NzcwMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teddy bear"
+    },
+    {
+      "id": "product-fluffy-bunny",
+      "description": "A soft white plush bunny.",
+      "imageUrl": "https://images.unsplash.com/photo-1762006496601-9be82cae28af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwbHVzaCUyMGJ1bm55fGVufDB8fHx8MTc2Nzc4MDQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plush bunny"
+    },
+    {
+      "id": "product-race-car",
+      "description": "A sleek red sports car toy.",
+      "imageUrl": "https://images.unsplash.com/photo-1516298252535-cf2ac5147f9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNzY3Njg0MjA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sports car"
+    },
+    {
+      "id": "product-construction-truck",
+      "description": "A yellow dump truck toy.",
+      "imageUrl": "https://images.unsplash.com/photo-1624084340915-8ef036692deb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkdW1wJTIwdHJ1Y2t8ZW58MHx8fHwxNzY3NzQ1MTQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dump truck"
+    },
+    {
+      "id": "product-alphabet-blocks",
+      "description": "Wooden blocks with letters and numbers.",
+      "imageUrl": "https://images.unsplash.com/photo-1657302155425-611b7aba5b33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbHBoYWJldCUyMGJsb2Nrc3xlbnwwfHx8fDE3Njc3MTQ4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "alphabet blocks"
+    },
+    {
+      "id": "product-science-kit",
+      "description": "A beginner's chemistry and science kit.",
+      "imageUrl": "https://images.unsplash.com/photo-1748261347902-451fb437e8fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzY2llbmNlJTIwa2l0fGVufDB8fHx8MTc2Nzc4MDQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science kit"
+    }
+  ]
 }
