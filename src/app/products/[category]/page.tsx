@@ -1,5 +1,3 @@
-'use client';
-
 import { notFound } from 'next/navigation';
 import { categories, products } from '@/lib/data';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
