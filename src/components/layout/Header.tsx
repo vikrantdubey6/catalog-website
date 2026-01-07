@@ -9,10 +9,14 @@ import { Search } from 'lucide-react';
 import CartIcon from '@/components/cart/CartIcon';
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const Header = () => {
   const { openPhoneModal, hasPhoneNumber } = useCart();
   const { toast } = useToast();
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleUserIconClick = () => {
     if (hasPhoneNumber()) {
@@ -23,6 +27,12 @@ const Header = () => {
     } else {
       openPhoneModal();
     }
+  };
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
@@ -39,16 +49,18 @@ const Header = () => {
           </div>
           
           <div className="hidden md:flex flex-1 justify-center px-8 lg:px-16">
-            <div className="relative w-full max-w-md">
+            <form onSubmit={handleSearch} className="relative w-full max-w-md">
               <Input
                 type="search"
                 placeholder="Search for amazing toys..."
                 className="pl-10 h-10"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-muted-foreground" />
               </div>
-            </div>
+            </form>
           </div>
 
           <div className="flex items-center gap-2">
