@@ -6,10 +6,10 @@ import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/1234567890" // Replace with your WhatsApp number
+      href="https://wa.me/9667706881" // Replace with your WhatsApp number
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      aria-label="Hey there! I want to know more about your product"
       className="fixed bottom-6 right-6 z-50 group"
     >
       <Button
